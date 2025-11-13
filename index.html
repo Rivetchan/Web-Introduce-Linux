@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan Linux</title>
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="transition-colors duration-500">
+
+    <!-- Theme Switcher -->
+    <div class="fixed top-4 right-4 flex space-x-2 z-50">
+        <button id="lightTheme" class="px-3 py-1 bg-white text-black rounded shadow">Light</button>
+        <button id="darkTheme" class="px-3 py-1 bg-gray-800 text-white rounded shadow">Dark</button>
+        <button id="penguinTheme" class="px-3 py-1 bg-linuxBlue text-white rounded shadow">Linux</button>
+    </div>
+
+    <!-- Slides -->
+    <div id="slides" class="max-w-4xl mx-auto mt-20 p-6 space-y-12">
+
+        <section class="slide hidden active" id="slide1">
+            <h1 class="text-4xl font-bold mb-4">Sejarah Linux</h1>
+            <p class="text-lg">Linux dibuat oleh Linus Torvalds pada tahun 1991. Awalnya hanya kernel, kemudian berkembang menjadi sistem operasi lengkap.</p>
+            <img src="source/tux.png" alt="Tux Linux" class="w-40 mt-4">
+        </section>
+
+        <section class="slide hidden" id="slide2">
+            <h1 class="text-4xl font-bold mb-4">Distribusi Linux</h1>
+            <ul class="list-disc list-inside text-lg">
+                <li>Ubuntu</li>
+                <li>Debian</li>
+                <li>Arch Linux</li>
+                <li>Fedora</li>
+            </ul>
+        </section>
+
+        <section class="slide hidden" id="slide3">
+            <h1 class="text-4xl font-bold mb-4">Kelebihan Linux</h1>
+            <ul class="list-disc list-inside text-lg">
+                <li>Gratis dan Open Source</li>
+                <li>Aman dan stabil</li>
+                <li>Banyak distro dan komunitas besar</li>
+                <li>Ringan dan bisa dikustomisasi</li>
+            </ul>
+        </section>
+
+        <section class="slide hidden" id="slide4">
+            <h1 class="text-4xl font-bold mb-4">Distro Populer</h1>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 border rounded shadow">
+                    <h2 class="font-semibold">Ubuntu</h2>
+                    <p>User-friendly, banyak software, cocok untuk pemula.</p>
+                </div>
+                <div class="p-4 border rounded shadow">
+                    <h2 class="font-semibold">Arch Linux</h2>
+                    <p>Rolling release, sangat bisa dikustomisasi, cocok untuk advance user.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button id="prevSlide" class="px-4 py-2 bg-gray-700 text-white rounded">Prev</button>
+        <button id="nextSlide" class="px-4 py-2 bg-gray-700 text-white rounded">Next</button>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
