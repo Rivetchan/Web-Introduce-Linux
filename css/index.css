@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS tambahan */
 .slide {
-    display: none;
+    opacity: 0;
+    z-index: 0;
+    display: flex;
 }
-
 .slide.active {
-    display: block;
+    opacity: 1;
+    z-index: 10;
+    transform: translateX(0);
+    transition: all 0.7s;
 }

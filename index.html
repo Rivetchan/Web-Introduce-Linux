@@ -1,71 +1,162 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengenalan Linux</title>
-    <link rel="stylesheet" href="css/output.css">
-</head>
-<body class="transition-colors duration-500">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pengenalan Linux</title>
+        <link rel="stylesheet" href="css/output.css">
+    </head>
+    <body
+        class="bg-gradient-to-br from-white via-yellow-100 to-yellow-400 text-black overflow-x-hidden">
 
-    <!-- Theme Switcher -->
-    <div class="fixed top-4 right-4 flex space-x-2 z-50">
-        <button id="lightTheme" class="px-3 py-1 bg-white text-black rounded shadow">Light</button>
-        <button id="darkTheme" class="px-3 py-1 bg-gray-800 text-white rounded shadow">Dark</button>
-        <button id="penguinTheme" class="px-3 py-1 bg-linuxBlue text-white rounded shadow">Linux</button>
-    </div>
+        <div
+            id="slides"
+            class="max-w-6xl mx-auto mt-20 p-6 relative h-screen flex items-center justify-center">
 
-    <!-- Slides -->
-    <div id="slides" class="max-w-4xl mx-auto mt-20 p-6 space-y-12">
-
-        <section class="slide hidden active" id="slide1">
-            <h1 class="text-4xl font-bold mb-4">Sejarah Linux</h1>
-            <p class="text-lg">Linux dibuat oleh Linus Torvalds pada tahun 1991. Awalnya hanya kernel, kemudian berkembang menjadi sistem operasi lengkap.</p>
-            <img src="source/tux.png" alt="Tux Linux" class="w-40 mt-4">
-        </section>
-
-        <section class="slide hidden" id="slide2">
-            <h1 class="text-4xl font-bold mb-4">Distribusi Linux</h1>
-            <ul class="list-disc list-inside text-lg">
-                <li>Ubuntu</li>
-                <li>Debian</li>
-                <li>Arch Linux</li>
-                <li>Fedora</li>
-            </ul>
-        </section>
-
-        <section class="slide hidden" id="slide3">
-            <h1 class="text-4xl font-bold mb-4">Kelebihan Linux</h1>
-            <ul class="list-disc list-inside text-lg">
-                <li>Gratis dan Open Source</li>
-                <li>Aman dan stabil</li>
-                <li>Banyak distro dan komunitas besar</li>
-                <li>Ringan dan bisa dikustomisasi</li>
-            </ul>
-        </section>
-
-        <section class="slide hidden" id="slide4">
-            <h1 class="text-4xl font-bold mb-4">Distro Populer</h1>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="p-4 border rounded shadow">
-                    <h2 class="font-semibold">Ubuntu</h2>
-                    <p>User-friendly, banyak software, cocok untuk pemula.</p>
+            <section
+                class="slide absolute inset-0 flex items-center justify-center transform transition-all duration-700 active"
+                id="slide1">
+                <div
+                    class="flex flex-col md:flex-row items-center md:items-center space-x-12 w-full">
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <img
+                            src="source/Linux.png"
+                            alt="Tux Linux"
+                            class="w-96 md:w-[28rem] rounded shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                        <h1
+                            class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-4">Sejarah Linux</h1>
+                        <p class="text-lg md:text-xl">Linux dibuat oleh Linus Torvalds pada tahun 1991.
+                            Awalnya hanya kernel, kemudian berkembang menjadi sistem operasi lengkap. Sistem
+                            ini terkenal aman, stabil, dan open source.</p>
+                        <p class="text-lg md:text-xl">Pada tahun 1992, Linux mulai menerima dukungan
+                            dari komunitas global dan digabungkan dengan perangkat lunak GNU untuk menjadi
+                            sistem operasi lengkap yang disebut
+                            <strong>GNU/Linux</strong>.</p>
+                        <p class="text-lg md:text-xl">Selama bertahun-tahun, Linux berkembang pesat. Distro pertama populer seperti
+                            <strong>Slackware</strong>
+                            dan
+                            <strong>Debian</strong>
+                            muncul pada awal 1990-an, diikuti oleh banyak distro modern seperti
+                            <strong>Ubuntu</strong>,
+                            <strong>Fedora</strong>, dan
+                            <strong>Arch Linux</strong>.</p>
+                    </div>
                 </div>
-                <div class="p-4 border rounded shadow">
-                    <h2 class="font-semibold">Arch Linux</h2>
-                    <p>Rolling release, sangat bisa dikustomisasi, cocok untuk advance user.</p>
+            </section>
+
+            <section
+                class="slide absolute inset-0 flex flex-col items-center justify-center transform transition-all duration-700"
+                id="slide2">
+                <h1
+                    class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-8">Distro Linux</h1>
+
+                <!-- Baris atas: 3 gambar -->
+                <div
+                    class="w-full max-w-6xl grid grid-cols-3 gap-8 justify-items-center items-center mb-8">
+                    <div
+                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
+                        data-distro="kali">
+                        <img
+                            src="source/kali.png"
+                            alt="Kali Linux"
+                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
+                    </div>
+                    <div
+                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
+                        data-distro="arch">
+                        <img
+                            src="source/arch.png"
+                            alt="Arch Linux"
+                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
+                    </div>
+                    <div
+                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
+                        data-distro="debian">
+                        <img
+                            src="source/debian.png"
+                            alt="Debian"
+                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
+                    </div>
+                </div>
+
+                <!-- Baris bawah: 2 gambar center -->
+                <div
+                    class="w-full max-w-6xl grid grid-cols-2 gap-8 justify-items-center items-center">
+                    <div
+                        class="cursor-pointer border-2 border-yellow-500 rounded p-2 flex justify-center"
+                        data-distro="ubuntu">
+                        <img
+                            src="source/ubuntu.png"
+                            alt="Ubuntu"
+                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
+                    </div>
+                    <div
+                        class="cursor-pointer border-2 border-yellow-500 rounded p-2 flex justify-center"
+                        data-distro="fedora">
+                        <img
+                            src="source/fedora.png"
+                            alt="Fedora"
+                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="slide absolute inset-0 flex items-center justify-center transform transition-all duration-700"
+                id="slide3">
+                <div
+                    class="flex flex-col md:flex-row items-center md:items-center space-x-12 w-full">
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <img
+                            src="source/linux-features.png"
+                            alt="Kelebihan Linux"
+                            class="w-96 md:w-[28rem] rounded shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                        <h1
+                            class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-4">Kelebihan Linux</h1>
+                        <ul class="list-disc list-inside text-lg md:text-xl">
+                            <li>Gratis dan Open Source</li>
+                            <li>Aman dan stabil</li>
+                            <li>Banyak distro dan komunitas besar</li>
+                            <li>Ringan dan bisa dikustomisasi</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
+            <button
+                id="nextSlide"
+                class="p-4 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition">➤</button>
+        </div>
+
+        <div
+            id="distroModal"
+            class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+            <div
+                class="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+                <div class="md:w-1/2 p-4 flex justify-center items-center">
+                    <img id="modalImage" src="" alt="Distro" class="w-64">
+                </div>
+                <div class="md:w-1/2 p-4 flex flex-col justify-center space-y-4 text-black">
+                    <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+                    <p id="modalDesc" class="text-lg"></p>
+                    <button
+                        id="modalClose"
+                        class="mt-4 px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-400 transition self-start">Close</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-    </div>
+        <footer class="bg-yellow-200 text-black text-center p-4 mt-12">
+            &copy; 2025 Group 4 Wireshark
+        </footer>
 
-    <!-- Navigation -->
-    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
-        <button id="prevSlide" class="px-4 py-2 bg-gray-700 text-white rounded">Prev</button>
-        <button id="nextSlide" class="px-4 py-2 bg-gray-700 text-white rounded">Next</button>
-    </div>
-
-    <script src="js/index.js"></script>
-</body>
+        <script src="js/index.js"></script>
+    </body>
 </html>
