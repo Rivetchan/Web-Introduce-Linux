@@ -1,162 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pengenalan Linux</title>
-        <link rel="stylesheet" href="css/output.css">
-    </head>
-    <body
-        class="bg-gradient-to-br from-white via-yellow-100 to-yellow-400 text-black overflow-x-hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pengenalan Linux — WireShark</title>
+    <link rel="icon" type="image/jpg" href="source/wireshark.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-white via-yellow-50 to-yellow-300 text-slate-900 antialiased">
 
-        <div
-            id="slides"
-            class="max-w-6xl mx-auto mt-20 p-6 relative h-screen flex items-center justify-center">
-
-            <section
-                class="slide absolute inset-0 flex items-center justify-center transform transition-all duration-700 active"
-                id="slide1">
-                <div
-                    class="flex flex-col md:flex-row items-center md:items-center space-x-12 w-full">
-                    <div class="w-full md:w-1/2 flex justify-center">
-                        <img
-                            src="source/Linux.png"
-                            alt="Tux Linux"
-                            class="w-96 md:w-[28rem] rounded shadow-lg">
-                    </div>
-                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                        <h1
-                            class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-4">Sejarah Linux</h1>
-                        <p class="text-lg md:text-xl">Linux dibuat oleh Linus Torvalds pada tahun 1991.
-                            Awalnya hanya kernel, kemudian berkembang menjadi sistem operasi lengkap. Sistem
-                            ini terkenal aman, stabil, dan open source.</p>
-                        <p class="text-lg md:text-xl">Pada tahun 1992, Linux mulai menerima dukungan
-                            dari komunitas global dan digabungkan dengan perangkat lunak GNU untuk menjadi
-                            sistem operasi lengkap yang disebut
-                            <strong>GNU/Linux</strong>.</p>
-                        <p class="text-lg md:text-xl">Selama bertahun-tahun, Linux berkembang pesat. Distro pertama populer seperti
-                            <strong>Slackware</strong>
-                            dan
-                            <strong>Debian</strong>
-                            muncul pada awal 1990-an, diikuti oleh banyak distro modern seperti
-                            <strong>Ubuntu</strong>,
-                            <strong>Fedora</strong>, dan
-                            <strong>Arch Linux</strong>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section
-                class="slide absolute inset-0 flex flex-col items-center justify-center transform transition-all duration-700"
-                id="slide2">
-                <h1
-                    class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-8">Distro Linux</h1>
-
-                <!-- Baris atas: 3 gambar -->
-                <div
-                    class="w-full max-w-6xl grid grid-cols-3 gap-8 justify-items-center items-center mb-8">
-                    <div
-                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
-                        data-distro="kali">
-                        <img
-                            src="source/kali.png"
-                            alt="Kali Linux"
-                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
-                    </div>
-                    <div
-                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
-                        data-distro="arch">
-                        <img
-                            src="source/arch.png"
-                            alt="Arch Linux"
-                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
-                    </div>
-                    <div
-                        class="cursor-pointer border-2 border-yellow-500 rounded p-2"
-                        data-distro="debian">
-                        <img
-                            src="source/debian.png"
-                            alt="Debian"
-                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
-                    </div>
-                </div>
-
-                <!-- Baris bawah: 2 gambar center -->
-                <div
-                    class="w-full max-w-6xl grid grid-cols-2 gap-8 justify-items-center items-center">
-                    <div
-                        class="cursor-pointer border-2 border-yellow-500 rounded p-2 flex justify-center"
-                        data-distro="ubuntu">
-                        <img
-                            src="source/ubuntu.png"
-                            alt="Ubuntu"
-                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
-                    </div>
-                    <div
-                        class="cursor-pointer border-2 border-yellow-500 rounded p-2 flex justify-center"
-                        data-distro="fedora">
-                        <img
-                            src="source/fedora.png"
-                            alt="Fedora"
-                            class="w-48 md:w-64 rounded shadow-lg hover:scale-105 transition-transform">
-                    </div>
-                </div>
-            </section>
-
-            <section
-                class="slide absolute inset-0 flex items-center justify-center transform transition-all duration-700"
-                id="slide3">
-                <div
-                    class="flex flex-col md:flex-row items-center md:items-center space-x-12 w-full">
-                    <div class="w-full md:w-1/2 flex justify-center">
-                        <img
-                            src="source/linux-features.png"
-                            alt="Kelebihan Linux"
-                            class="w-96 md:w-[28rem] rounded shadow-lg">
-                    </div>
-                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                        <h1
-                            class="text-4xl md:text-5xl font-bold border-b-4 border-yellow-500 pb-2 mb-4">Kelebihan Linux</h1>
-                        <ul class="list-disc list-inside text-lg md:text-xl">
-                            <li>Gratis dan Open Source</li>
-                            <li>Aman dan stabil</li>
-                            <li>Banyak distro dan komunitas besar</li>
-                            <li>Ringan dan bisa dikustomisasi</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-yellow-400/95 backdrop-blur-sm shadow">
+      <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="text-2xl font-extrabold flex items-center">
+            <i class="fab fa-linux mr-2"></i> Linuxpedia
+          </div>
+          <span class="hidden md:inline text-sm text-slate-700">Pengenalan & Distro</span>
         </div>
+        <ul class="hidden md:flex items-center gap-8 text-sm font-semibold">
+          <li><a href="#sejarah" class="nav-link hover:text-white">Sejarah</a></li>
+          <li><a href="#distro-section" class="nav-link hover:text-white">Distro</a></li>
+          <li><a href="#kelebihan" class="nav-link hover:text-white">Kelebihan</a></li>
+          <li><a href="#penggunaan" class="nav-link hover:text-white">Penggunaan</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded bg-yellow-200">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu md:hidden bg-yellow-400/95 backdrop-blur-sm px-6 py-4 hidden">
+        <ul class="flex flex-col gap-4 text-sm font-semibold">
+          <li><a href="#sejarah" class="nav-link hover:text-white block py-2">Sejarah</a></li>
+          <li><a href="#distro-section" class="nav-link hover:text-white block py-2">Distro</a></li>
+          <li><a href="#kelebihan" class="nav-link hover:text-white block py-2">Kelebihan</a></li>
+          <li><a href="#penggunaan" class="nav-link hover:text-white block py-2">Penggunaan</a></li>
+        </ul>
+      </div>
+    </nav>
 
-        <div class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
-            <button
-                id="nextSlide"
-                class="p-4 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition">➤</button>
+    <main class="mx-auto max-w-6xl px-6 pt-28 pb-24">
+
+      <!-- HERO SECTION -->
+      <section class="mb-16 rounded-lg bg-white/60 p-8 shadow-sm border border-yellow-100 fade-in">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4">Selamat Datang di <span class="text-yellow-600">Linuxpedia</span></h1>
+          <p class="text-xl text-slate-700 max-w-3xl mx-auto">Portal lengkap untuk mengenal sistem operasi Linux, sejarahnya, berbagai distribusi (distro), dan keunggulannya.</p>
+          <div class="mt-6 flex justify-center gap-4">
+            <a href="#sejarah" class="px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg shadow hover:bg-yellow-600 transition">Pelajari Sejarah</a>
+            <a href="#distro-section" class="px-6 py-3 bg-white text-yellow-700 font-semibold rounded-lg shadow border border-yellow-300 hover:bg-yellow-50 transition">Jelajahi Distro</a>
+          </div>
         </div>
+      </section>
 
-        <div
-            id="distroModal"
-            class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
-            <div
-                class="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
-                <div class="md:w-1/2 p-4 flex justify-center items-center">
-                    <img id="modalImage" src="" alt="Distro" class="w-64">
-                </div>
-                <div class="md:w-1/2 p-4 flex flex-col justify-center space-y-4 text-black">
-                    <h2 id="modalTitle" class="text-2xl font-bold"></h2>
-                    <p id="modalDesc" class="text-lg"></p>
-                    <button
-                        id="modalClose"
-                        class="mt-4 px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-400 transition self-start">Close</button>
-                </div>
+      <!-- SEJARAH -->
+      <section id="sejarah" class="mb-16 rounded-lg bg-white/60 p-8 shadow-sm border border-yellow-100 fade-in">
+        <div class="md:flex md:items-center md:gap-10">
+          <div class="flex justify-center md:flex-1">
+            <!-- Gambar Linux -->
+            <div class="w-80 rounded-lg shadow-lg overflow-hidden bg-white">
+              <img src="source/Linux.png" alt="Linux Logo" class="w-full h-auto object-contain">
             </div>
+          </div>
+
+          <div class="mt-6 md:mt-0 md:flex-1">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900">
+              Sejarah Linux
+            </h2>
+            <!-- garis kuning pendek -->
+            <div class="mt-3 h-[6px] w-28 bg-yellow-500 rounded-full"></div>
+
+            <div class="mt-6 space-y-4 text-lg text-slate-800 leading-relaxed">
+              <p>Linux dibuat oleh <span class="font-semibold">Linus Torvalds</span> pada tahun 1991 sebagai proyek hobi saat masih menjadi mahasiswa di Universitas Helsinki, Finlandia. Awalnya hanya berupa kernel, kemudian berkembang menjadi sistem operasi lengkap berkat kontribusi komunitas global.</p>
+              <p>Pada tahun 1992, Linux dilisensikan di bawah GPL (General Public License) dan digabungkan dengan perangkat lunak GNU untuk menjadi sistem operasi lengkap <strong>GNU/Linux</strong>. Kombinasi ini menciptakan sistem operasi bebas yang dapat dimodifikasi dan didistribusikan oleh siapa saja.</p>
+              <p>Distro pertama populer seperti <strong>Slackware</strong> (1993) dan <strong>Debian</strong> (1993) muncul pada awal 1990-an, diikuti oleh banyak distro modern seperti <strong>Ubuntu</strong> (2004), <strong>Fedora</strong> (2003), dan <strong>Arch Linux</strong> (2002).</p>
+            </div>
+            
+            <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+              <h3 class="font-bold text-yellow-800 mb-2">Fakta Menarik:</h3>
+              <ul class="list-disc pl-5 text-slate-700 space-y-1">
+                <li>Nama "Linux" berasal dari kombinasi "Linus" dan "Unix"</li>
+                <li>Logo Linux, Tux, adalah seekor penguin yang dirancang oleh Larry Ewing</li>
+                <li>Lebih dari 90% superkomputer di dunia menggunakan Linux</li>
+                <li>Android, sistem operasi mobile paling populer, dibangun di atas kernel Linux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DISTRO SECTION (PROFESIONAL) -->
+      <section id="distro-section" class="py-8 fade-in">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900">Distro Linux</h2>
+          <div class="mt-3 h-[6px] w-28 bg-yellow-500 rounded-full mx-auto"></div>
+          <p class="mt-4 text-slate-700 max-w-2xl mx-auto">Klik pada salah satu distro untuk melihat detail lengkapnya</p>
         </div>
 
-        <footer class="bg-yellow-200 text-black text-center p-4 mt-12">
-            &copy; 2025 Group 4 Wireshark
-        </footer>
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+          <!-- DISTRO GRID -->
+          <div class="w-full max-w-2xl mx-auto lg:mx-0 lg:flex-1">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <!-- Kali Linux -->
+              <div class="distro-card group" data-distro="kali">
+                <div class="distro-logo-container">
+                  <img src="source/kali.png" alt="Kali Linux" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-shield-alt text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Kali Linux</h3>
+                <p class="distro-desc">Security & PenTesting</p>
+              </div>
 
-        <script src="js/index.js"></script>
-    </body>
+              <!-- Arch Linux -->
+              <div class="distro-card group" data-distro="arch">
+                <div class="distro-logo-container">
+                  <img src="source/arch.png" alt="Arch Linux" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-tools text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Arch Linux</h3>
+                <p class="distro-desc">Advanced & Rolling</p>
+              </div>
+
+              <!-- Debian -->
+              <div class="distro-card group" data-distro="debian">
+                <div class="distro-logo-container">
+                  <img src="source/debian.png" alt="Debian" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-rocket text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Debian</h3>
+                <p class="distro-desc">Stable & Server</p>
+              </div>
+
+              <!-- Ubuntu -->
+              <div class="distro-card group" data-distro="ubuntu">
+                <div class="distro-logo-container">
+                  <img src="source/ubuntu.png" alt="Ubuntu" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-users text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Ubuntu</h3>
+                <p class="distro-desc">Beginner & Desktop</p>
+              </div>
+
+              <!-- Fedora -->
+              <div class="distro-card group" data-distro="fedora">
+                <div class="distro-logo-container">
+                  <img src="source/fedora.png" alt="Fedora" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-flask text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Fedora</h3>
+                <p class="distro-desc">Cutting-edge & Desktop</p>
+              </div>
+
+              <!-- Mint -->
+              <div class="distro-card group" data-distro="mint">
+                <div class="distro-logo-container">
+                  <img src="source/mint.jpeg" alt="Linux Mint" class="distro-logo" onerror="handleImageError(this)">
+                  <div class="distro-logo-overlay">
+                    <i class="fas fa-leaf text-2xl text-white"></i>
+                  </div>
+                </div>
+                <h3 class="distro-name">Linux Mint</h3>
+                <p class="distro-desc">User-friendly</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- INFO PANEL -->
+          <div class="w-full lg:flex-1 max-w-2xl lg:max-w-none">
+            <div class="info-panel rounded-xl bg-white p-6 shadow-lg border border-yellow-100 transition-all duration-300">
+              <div class="flex flex-col md:flex-row items-start gap-6">
+                <div id="selectedImage" class="distro-image w-24 h-24 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-xl flex items-center justify-center text-yellow-600 text-4xl flex-shrink-0">
+                  <i class="fab fa-linux"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-3 mb-2">
+                    <h3 id="selectedTitle" class="text-2xl font-bold text-slate-900">Pilih Distro Linux</h3>
+                    <span id="selectedTag" class="inline-flex items-center gap-1 rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-700">
+                      <i class="fas fa-tag text-xs"></i>
+                      <span id="selectedTagText">—</span>
+                    </span>
+                  </div>
+                  <p id="selectedDesc" class="text-slate-700 leading-relaxed">
+                    Klik salah satu distro Linux dari grid di samping untuk melihat ringkasan, tujuan, dan keunggulannya.
+                  </p>
+
+                  <div id="selectedDetails" class="mt-6 space-y-4 hidden">
+                    <div>
+                      <h4 class="font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        Keunggulan Utama
+                      </h4>
+                      <ul id="selectedList" class="text-slate-700 space-y-2"></ul>
+                    </div>
+                    
+                    <div id="selectedUsage" class="hidden">
+                      <h4 class="font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-blue-500"></i>
+                        Penggunaan Terbaik
+                      </h4>
+                      <p id="selectedUsageText" class="text-slate-700"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Download & Resources Section -->
+              <div id="selectedResources" class="mt-6 pt-6 border-t border-yellow-100 hidden">
+                <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                  <i class="fas fa-download text-green-500"></i>
+                  Resources
+                </h4>
+                <div class="flex flex-wrap gap-3">
+                  <a href="#" class="resource-link" id="officialSite" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    Situs Resmi
+                  </a>
+                  <a href="#" class="resource-link" id="downloadLink" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download
+                  </a>
+                  <a href="#" class="resource-link" id="docsLink" target="_blank">
+                    <i class="fas fa-book"></i>
+                    Dokumentasi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENGGUNAAN LINUX -->
+      <section id="penggunaan" class="mt-16 rounded-lg bg-white/60 p-8 shadow-sm border border-yellow-100 fade-in">
+        <h3 class="text-3xl font-extrabold">Di Mana Linux Digunakan?</h3>
+        <div class="mt-3 h-[6px] w-24 bg-yellow-500 rounded-full"></div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-yellow-100 text-center">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-server text-2xl text-yellow-600"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Server</h4>
+            <p class="text-slate-700">Lebih dari 90% server web menggunakan Linux karena stabilitas dan keamanannya.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-yellow-100 text-center">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-mobile-alt text-2xl text-yellow-600"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Perangkat Mobile</h4>
+            <p class="text-slate-700">Android, sistem operasi mobile terpopuler, dibangun di atas kernel Linux.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-yellow-100 text-center">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-desktop text-2xl text-yellow-600"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Desktop</h4>
+            <p class="text-slate-700">Distro seperti Ubuntu dan Mint menyediakan pengalaman desktop yang user-friendly.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-yellow-100 text-center">
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-microchip text-2xl text-yellow-600"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Embedded Systems</h4>
+            <p class="text-slate-700">Digunakan dalam router, smart TV, IoT devices, dan perangkat embedded lainnya.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kelebihan -->
+      <section id="kelebihan" class="mt-16 rounded-lg bg-white/60 p-8 shadow-sm border border-yellow-100 fade-in">
+        <h3 class="text-3xl font-extrabold">Kelebihan Linux</h3>
+        <div class="mt-3 h-[6px] w-24 bg-yellow-500 rounded-full"></div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-700">
+          <div>
+            <div class="flex items-start mb-4">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-lock text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Aman dan Stabil</h4>
+                <p class="mt-1">Linux terkenal dengan keamanan dan stabilitasnya, jarang crash atau terkena virus.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start mb-4">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-code text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Open Source</h4>
+                <p class="mt-1">Kode sumber terbuka, dapat dimodifikasi dan didistribusikan sesuai kebutuhan.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-users text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Komunitas Besar</h4>
+                <p class="mt-1">Dukungan komunitas global yang aktif membantu pengguna pemula hingga ahli.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex items-start mb-4">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-bolt text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Ringan dan Cepat</h4>
+                <p class="mt-1">Dapat berjalan pada hardware lama dengan performa yang tetap optimal.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start mb-4">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-palette text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Kustomisasi Tinggi</h4>
+                <p class="mt-1">Dapat disesuaikan sepenuhnya sesuai preferensi pengguna.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+                <i class="fas fa-wrench text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Tooling Lengkap</h4>
+                <p class="mt-1">Menyediakan berbagai alat pengembangan dan server yang powerful.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-center text-sm text-slate-700 py-6 bg-yellow-400/20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <div class="text-xl font-extrabold flex items-center justify-center md:justify-start">
+              <i class="fab fa-linux mr-2"></i> Linuxpedia
+            </div>
+            <p class="mt-1">Portal edukasi Linux untuk semua kalangan</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="https://github.com/Rivetchan" class="text-slate-700 hover:text-yellow-600 transition">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/ennonurwansyahr" class="text-slate-700 hover:text-yellow-600 transition">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://discord.com/users/888014133629423676" class="text-slate-700 hover:text-yellow-600 transition">
+              <i class="fab fa-discord text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-yellow-200">
+          &copy; 2025 Linuxpedia — dibuat dengan <i class="fas fa-fish text-blue-500 shark-icon"></i> Kelompok WireShark
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
 </html>

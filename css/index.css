@@ -1,15 +1,304 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS CDN untuk prototyping */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
 
-.slide {
-    opacity: 0;
-    z-index: 0;
-    display: flex;
+/* Custom CSS */
+:root {
+  --accent: #F1C40F;
 }
-.slide.active {
-    opacity: 1;
-    z-index: 10;
-    transform: translateX(0);
-    transition: all 0.7s;
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+.distro-item {
+  transition: all 0.3s ease;
+}
+
+.distro-item:hover {
+  transform: scale(1.1);
+  z-index: 40;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.rotate-animation {
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F1C40F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4ac0d;
+}
+
+/* Styles untuk Distro Grid dengan Gambar Logo */
+
+/* Distro Card dengan Gambar */
+.distro-card {
+  @apply bg-white rounded-xl p-4 text-center cursor-pointer transition-all duration-300 shadow-md border border-yellow-100 relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.distro-card:hover {
+  @apply shadow-xl transform -translate-y-2 border-yellow-300;
+}
+
+.distro-card.active {
+  @apply shadow-xl border-yellow-400 bg-yellow-50 transform -translate-y-1;
+}
+
+/* Container untuk logo distro */
+.distro-logo-container {
+  @apply relative w-20 h-16 mb-3 mx-auto flex items-center justify-center;
+}
+
+.distro-logo {
+  @apply w-full h-full object-contain transition-all duration-300;
+  filter: grayscale(30%);
+}
+
+.distro-card:hover .distro-logo {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+.distro-card.active .distro-logo {
+  filter: grayscale(0%) brightness(1.05);
+}
+
+/* Overlay untuk icon */
+.distro-logo-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40 rounded-lg flex items-center justify-center opacity-0 transition-opacity duration-300;
+}
+
+.distro-card:hover .distro-logo-overlay {
+  @apply opacity-100;
+}
+
+.distro-name {
+  @apply font-bold text-base text-slate-900 mb-1 mt-2;
+}
+
+.distro-desc {
+  @apply text-xs text-slate-600;
+}
+
+/* Info Panel */
+.info-panel {
+  @apply sticky top-32;
+}
+
+.distro-image {
+  @apply transition-all duration-300;
+}
+
+.info-panel.updated {
+  animation: panelUpdate 0.6s ease;
+}
+
+@keyframes panelUpdate {
+  0% { transform: translateX(10px); opacity: 0.8; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Resource Links */
+.resource-link {
+  @apply inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+}
+
+.resource-link:hover {
+  @apply no-underline transform scale-105;
+}
+
+/* Feature List */
+.feature-list {
+  @apply space-y-3;
+}
+
+.feature-item {
+  @apply flex items-start gap-3;
+}
+
+.feature-icon {
+  @apply w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1;
+}
+
+.feature-icon i {
+  @apply text-green-600 text-xs;
+}
+
+/* Fallback untuk gambar yang tidak ada */
+.distro-logo-container::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg;
+  z-index: -1;
+}
+
+/* Style untuk gambar Linux di section sejarah */
+.linux-logo {
+  @apply w-full h-auto object-contain rounded-lg;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .info-panel {
+    @apply static mt-8;
+  }
+}
+
+@media (max-width: 768px) {
+  .distro-card {
+    @apply p-3;
+    min-height: 160px;
+  }
+  
+  .distro-logo-container {
+    @apply w-16 h-12 mb-2;
+  }
+  
+  .distro-name {
+    @apply text-sm;
+  }
+  
+  .distro-desc {
+    @apply text-xs;
+  }
+  
+  .distro-logo-overlay i {
+    @apply text-lg;
+  }
+}
+
+@media (max-width: 480px) {
+  .distro-card {
+    min-height: 140px;
+  }
+  
+  .distro-logo-container {
+    @apply w-14 h-10;
+  }
+}
+
+/* Loading state untuk gambar */
+.distro-logo.loading {
+  @apply opacity-50;
+}
+
+/* Selection Indicator */
+.distro-card::after {
+  content: '';
+  @apply absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300;
+}
+
+.distro-card.active::after {
+  @apply border-yellow-400;
+}
+
+/* Animation untuk logo */
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.distro-card:hover .distro-logo {
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* Focus states untuk accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #F1C40F;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }
