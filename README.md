@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="aset/Web-Linux.png" alt="Logo" width="200"/>
+  <img src="aset/Web-Linux.png" alt="Logo" width="650"/>
 </div>
 
 # 🌐 Web Introduce Linux
